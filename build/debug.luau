@@ -1,0 +1,49 @@
+type Format__DARKLUA_TYPE_a = {[string]: Instance?}
+type Map__DARKLUA_TYPE_b<Service> = Service&{Workspace: Workspace, RunService: RunService, GuiService: GuiService, Stats: Stats, TimerService: TimerService, SoundService: SoundService, VideoCaptureService: VideoCaptureService, NonReplicatedCSGDictionaryService: NonReplicatedCSGDictionaryService, CSGDictionaryService: CSGDictionaryService, LogService: LogService, ContentProvider: ContentProvider, KeyframeSequenceProvider: KeyframeSequenceProvider, AnimationClipProvider: AnimationClipProvider, Chat: Chat, MarketplaceService: MarketplaceService, Players: Players, PointsService: PointsService, NotificationService: NotificationService, ReplicatedFirst: ReplicatedFirst, HttpRbxApiService: HttpRbxApiService, TweenService: TweenService, MaterialService: MaterialService, TextChatService: TextChatService, TextService: TextService, PlayerEmulatorService: PlayerEmulatorService, CorePackages: CorePackages, StudioData: StudioData, SharedTableRegistry: SharedTableRegistry, StarterPlayer: StarterPlayer, StarterPack: StarterPack, StarterGui: StarterGui, CoreGui: CoreGui, LocalizationService: LocalizationService, LocalizationTable: LocalizationTable, PolicyService: PolicyService, TeleportService: TeleportService, JointsService: JointsService, CollectionService: CollectionService, PhysicsService: PhysicsService, BadgeService: BadgeService, FriendService: FriendService, InsertService: InsertService, GamePassService: GamePassService, Debris: Debris, CookiesService: CookiesService, Selection: Selection, UserInputService: UserInputService, KeyboardService: KeyboardService, MouseService: MouseService, VRService: VRService, ContextActionService: ContextActionService, ScriptService: ScriptService, AssetService: AssetService, TouchInputService: TouchInputService, BrowserService: BrowserService, CaptureService: CaptureService, AppStorageService: AppStorageService, AnalyticsService: AnalyticsService, HeatmapService: HeatmapService, ScriptContext: ScriptContext, RbxAnalyticsService: RbxAnalyticsService, HttpService: HttpService, Lighting: Lighting, ThirdPartyUserService: ThirdPartyUserService, PlatformFriendsService: PlatformFriendsService, PlatformCloudStorageService: PlatformCloudStorageService, SafetyService: SafetyService, ExperienceStateCaptureService: ExperienceStateCaptureService, GenericChallengeService: GenericChallengeService, ScriptRegistrationService: ScriptRegistrationService, RuntimeScriptService: RuntimeScriptService, RobloxReplicatedStorage: RobloxReplicatedStorage, MessageBusService: MessageBusService, MemStorageService: MemStorageService, IXPService: IXPService, ChangeHistoryService: ChangeHistoryService, GamepadService: GamepadService, UIDragDetectorService: UIDragDetectorService, HapticService: HapticService, MeshContentProvider: MeshContentProvider, SolidModelContentProvider: SolidModelContentProvider, HSRDataContentProvider: HSRDataContentProvider, VideoService: VideoService, EditableService: EditableService, TextBoxService: TextBoxService, ControllerService: ControllerService, ExperienceService: ExperienceService, LinkingService: LinkingService, EventIngestService: EventIngestService, NetworkClient: NetworkClient, VoiceChatService: VoiceChatService, Visit: Visit, PlayerHydrationService: PlayerHydrationService, GuidRegistryService: GuidRegistryService, PermissionsService: PermissionsService, Teams: Teams, FeatureRestrictionManager: FeatureRestrictionManager, ExperienceAuthService: ExperienceAuthService, CommerceService: CommerceService, ReplicatedStorage: ReplicatedStorage, TestService: TestService, AdService: AdService, SocialService: SocialService, ProximityPromptService: ProximityPromptService, AvatarChatService: AvatarChatService, AvatarCreationService: AvatarCreationService, GenerationService: GenerationService, RobloxServerStorage: RobloxServerStorage, ScriptProfilerService: ScriptProfilerService, HeapProfilerService: HeapProfilerService, TelemetryService: TelemetryService, SessionService: SessionService, WebViewService: WebViewService, AudioFocusService: AudioFocusService, UserService: UserService, FaceAnimatorService: FaceAnimatorService, GroupService: GroupService, CreatorStoreService: CreatorStoreService, AvatarEditorService: AvatarEditorService, RtMessagingService: RtMessagingService, ExperienceNotificationService: ExperienceNotificationService, AchievementService: AchievementService, PlayerViewService: PlayerViewService, SpawnerService: SpawnerService, [string]: Instance}
+
+local __DARKLUA_BUNDLE_MODULES
+
+__DARKLUA_BUNDLE_MODULES = {
+    cache = {},
+    load = function(m)
+        if not __DARKLUA_BUNDLE_MODULES.cache[m] then
+            __DARKLUA_BUNDLE_MODULES.cache[m] = {
+                c = __DARKLUA_BUNDLE_MODULES[m](),
+            }
+        end
+
+        return __DARKLUA_BUNDLE_MODULES.cache[m].c
+    end,
+}
+
+do
+    function __DARKLUA_BUNDLE_MODULES.a()
+        return nil
+    end
+end
+
+__DARKLUA_BUNDLE_MODULES.load('a')
+
+local GetService = game.GetService
+
+local function CacheService(self: Format__DARKLUA_TYPE_a, Name: string): Instance?
+    local Cache = rawget(self, Name)
+
+    if Cache then
+        return Cache
+    end
+
+    local Service = GetService(game, Name)
+
+    if cloneref then
+        Service = cloneref(Service)
+    end
+
+    rawset(self, Name, Service)
+
+    return Service
+end
+
+local ServiceUtil = setmetatable({}, {__index = CacheService})
+
+return ServiceUtil::Map__DARKLUA_TYPE_b<typeof(ServiceUtil)>

@@ -1,0 +1,16 @@
+{
+    "generator": "readable",
+    "rules": [
+        "remove_unused_variable",
+        "remove_comments"
+    ],
+    "bundle": {
+		"require_mode": {
+			"name": "luau",
+			"sources": {
+				"@src": "../src",
+                "@types": "../src/types"
+			}
+		}
+	}
+}
