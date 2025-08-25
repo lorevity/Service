@@ -3,7 +3,7 @@ Service is a caching utility for ROBLOX which goal is to achieve the best perfom
 
 # Installation
 - This utility was created with [darklua](https://github.com/seaofvoices/darklua) compatibility and assumed to have the same compatibility when used. <br/>
-- To preserve the typization when using it, it is recommended to [copy the repository](https://docs.github.com/ru/repositories/creating-and-managing-repositories/cloning-a-repository) to use the typization and the utility itself separately. <br/>
+- To preserve the typization when using it, it is recommended to [copy the repository](https://docs.github.com/ru/repositories/creating-and-managing-repositories/cloning-a-repository) to use the files itself separately. <br/>
 - Otherwise, you have the option to download the release version for future reference.
 
 # Usage
