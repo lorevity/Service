@@ -1,2 +1,36 @@
 # Service
-Service caching utility
+Service is a caching utility for ROBLOX which goal is to achieve the best perfomance and experience, while working with services.
+
+# Installation
+- This utility was created with [darklua](https://github.com/seaofvoices/darklua) compatibility and assumed to have the same compatibility when used. <br/>
+- To preserve the typization when using it, it is recommended to [copy the repository](https://docs.github.com/ru/repositories/creating-and-managing-repositories/cloning-a-repository) to use the typization and the utility itself separately. <br/>
+- Otherwise, you have the option to download the release version for future reference.
+
+# Usage
+- The utility itself is very simple and easy to use.
+- To access a service, you simply need to specify its name and the utility itself will cache and return the service.
+```lua
+local ServiceUtil = require("@utils/service") -- Alias/service.luau
+print(ServiceUtil.ReplicatedFirst) -- Output: ReplicatedFirst
+```
+
+# Advice
+- ✅ It's recommended to localize services each time you access them more than once.
+- ✅ This will improve performance better than if it's done ONLY by a utility.
+```lua
+local ServiceUtil = require("@utils/service")
+
+local Players = service.Players
+local CoreGui = service.CoreGui
+
+print(`Successfully cached: {Players}, {CoreGui}`)
+```
+- ⚠️ It's highly advised not to access the services each time without localizing them. Especially if you do it in a loop or connection.
+- ⚠️ This will result to processing of the cached services through the table each time, which will cause deterioration in perfomance.
+```lua
+local ServiceUtil = require("@utils/service")
+
+while task.wait() do
+    print(ServiceUtil.Workspace)
+end
+```
