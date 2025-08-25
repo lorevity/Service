@@ -4,7 +4,7 @@ Service is a caching utility for ROBLOX which goal is to achieve the best perfom
 # Installation
 - This utility was created with [darklua](https://github.com/seaofvoices/darklua) compatibility and assumed to have the same compatibility when used. <br/>
 - To preserve the typization when using it, it is recommended to [copy the repository](https://docs.github.com/ru/repositories/creating-and-managing-repositories/cloning-a-repository) to use the files separately. <br/>
-- Otherwise, you have the option to download the release version for future reference.
+- Otherwise, you have the option to [download the release version](https://github.com/lorevity/Service/releases/download/v0.0.1/service.luau) for future reference.
 
 # Usage
 - The utility itself is very simple and easy to use.
