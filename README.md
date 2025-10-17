@@ -15,18 +15,20 @@ print(ServiceUtil.ReplicatedFirst) -- Output: ReplicatedFirst
 ```
 
 # Advice
-- ✅ It's recommended to localize services each time you access them more than once.
-- ✅ This will improve performance better than if it's done ONLY by a utility.
+> [!NOTE]
+> It's recommended to localize services each time you access them more than once. This will improve performance better than if it's done only by a utility.
 ```lua
 local ServiceUtil = require("@utils/service")
 
 local Players = service.Players
 local CoreGui = service.CoreGui
 
-print(`Successfully cached: {Players}, {CoreGui}`)
+while task.wait() do
+    print(`Cached services: {Players}, {CoreGui}`)
+end
 ```
-- ⚠️ It's highly advised not to access the services each time without localizing them. Especially if you do it in a loop or connection.
-- ⚠️ This will result to processing of the cached services through the table each time, which will cause deterioration in perfomance.
+> [!CAUTION]
+> It's highly advised not to access the services each time without localizing them. Especially if you do it in a loop or connection. Either way it will lead to processing of the cached services through the table each time, which will cause deterioration in perfomance.
 ```lua
 local ServiceUtil = require("@utils/service")
 
