@@ -1,6 +1,6 @@
 # Service
 Service is a caching utility for ROBLOX which goal is to achieve the best ~~perfomance and experience~~ readability and organization of the code, while working with services.
-> [!CAUTION]
+> [!WARNING]
 > The performance difference is minimal, and this utility may be slower than if you receive the service manually. This is due to the fact that `GetService` is processed in C++ with a [singleton-like](https://en.wikipedia.org/wiki/Singleton_pattern) structure. Although you still have the option of using it to keep the caching with an additional `clonereference` function.
 
 # Installation
