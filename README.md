@@ -1,7 +1,5 @@
 # Service
-Service is a caching utility for ROBLOX which goal is to achieve the best ~~perfomance and experience~~ readability and organization of the code, while working with services.
-> [!WARNING]
-> The performance difference is minimal, and this utility may be slower than if you receive the service manually. This is due to the fact that `GetService` is processed in C++ with a [singleton-like](https://en.wikipedia.org/wiki/Singleton_pattern) structure. Although you still have the option of using it to keep the caching with an additional `clonereference` function.
+Service is a type-safe utility in Roblox that automatically recreates the service through `cloneref` and caches it for future use, while at the same time providing a more beautiful and compact organization of the code in the project.
 
 # Installation
 - This utility was created with [darklua](https://github.com/seaofvoices/darklua) compatibility and assumed to have the same compatibility when used. <br/>
@@ -12,29 +10,8 @@ Service is a caching utility for ROBLOX which goal is to achieve the best ~~perf
 - The utility itself is very simple and easy to use.
 - To access a service, you simply need to specify its name and the utility itself will cache and return the service.
 ```lua
-local ServiceUtil = require("@utils/service") -- Alias/service.luau
-print(ServiceUtil.ReplicatedFirst) -- Output: ReplicatedFirst
+local service = require("@utils/service") -- Alias/service.luau
+print(service.ReplicatedFirst) -- Output: ReplicatedFirst
 ```
-
-# Advice
 > [!NOTE]
-> It's recommended to localize services each time you access them more than once. This will improve performance better than if it's done only by a utility.
-```lua
-local ServiceUtil = require("@utils/service")
-
-local Players = service.Players
-local CoreGui = service.CoreGui
-
-while task.wait() do
-    print(`Cached services: {Players}, {CoreGui}`)
-end
-```
-> [!CAUTION]
-> It's highly advised not to access the services each time without localizing them. Especially if you do it in a loop or connection. Either way it will lead to processing of the cached services through the table each time, which will cause deterioration in perfomance.
-```lua
-local ServiceUtil = require("@utils/service")
-
-while task.wait() do
-    print(ServiceUtil.Workspace)
-end
-```
+> It's recommended to localize services if you access them repeatedly. This will avoid additional indexing which is affecting your optimization.
